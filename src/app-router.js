@@ -421,6 +421,11 @@
       deactivateRoute(router.previousRoute);
     }
 
+    // set model to element attributes
+    Object.keys(eventDetail.model).forEach(function(key) {
+      element.setAttribute(key, eventDetail.model[key]);
+    });
+
     // add the new content
     router.activeRoute.appendChild(element);
 
